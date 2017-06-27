@@ -1,14 +1,14 @@
-# "CDEF","ABC","FIJK"
+import sys
 
-Score = []
-with open("NameScore.dat") as fo:
+score = []
+with open(sys.argv[1]) as fo:
 	line = fo.readline()
 
-line = line[:-1].replace('"', '')
-Score = line.split(',')
-Score.sort()
-for i in range(len(Score)):
+line = line.strip().replace('"', '')
+score = line.split(',')
+score.sort()
+for index, element in enumerate(score):
 	sum = 0
-	for j in range(len(Score[i])):
-		sum += ord(Score[i][j]) - 64
-	print sum * (i + 1)
+	for j in element:
+		sum += ord(j) - 64
+	print sum * (index + 1)
