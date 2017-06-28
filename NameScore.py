@@ -9,7 +9,11 @@ def access_from_file(file):
 	return score
 
 def name_score(score):
+	ls = []
 	for index, element in enumerate(score):
-		print sum([ord(x)-64 for x in element]) * (index + 1)
+		ls.append(sum([ord(x)-64 for x in element]) * (index + 1))
+	return ls
 
-name_score(access_from_file(sys.argv[1]))
+if __name__ == '__main__':
+	for i in name_score(access_from_file(sys.argv[1])):
+		print i
