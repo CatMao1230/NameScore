@@ -13,5 +13,6 @@ class TestNameScore(unittest.TestCase):
 		value = NameScore.name_score(ls)
 		self.assertEqual(expacted_value, value)
 
+
 if __name__ == '__main__':
 	unittest.main()
