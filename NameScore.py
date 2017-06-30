@@ -3,9 +3,18 @@ import sys
 def access_from_file(file):
 	with open(file) as fo:
 		line = fo.readline()
-	line = line.strip().replace('"', '')
-	score = line.split(',')
+
+	score = fix_str(line)
 	score.sort()
+
+	return score
+
+def fix_str(s):
+	s = s.strip().replace('"', '')
+	score = s.split(',')
+
+	for index, element in enumerate(score):
+		score[index] = filter(str.isalpha, element).upper()
 	return score
 
 def name_score(score):
