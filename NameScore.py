@@ -10,7 +10,6 @@ def access_from_file(file):
 	return score
 
 def fix_str(s):
-	s = s.strip().replace('"', '')
 	score = s.split(',')
 
 	for index, element in enumerate(score):
